@@ -3,8 +3,6 @@ import { func, string } from 'prop-types';
 import { Button } from '../Fixed/Styled';
 
 const ThemeToggle = ({ theme, toggleTheme }) => {
-  console.log(theme);
-
   const icon =
     theme && theme === 'dark' ? 'fal fa-toggle-on' : 'fal fa-toggle-off';
   return (

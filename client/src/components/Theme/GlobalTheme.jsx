@@ -11,15 +11,10 @@ export const GlobalStyles = createGlobalStyle`
     position: relative;
     margin: 0;
 
-    .fal {
-        color: ${({ theme }) => theme.text};
-    }
-
-    button {
-        border: 1px solid;
-        border-color: ${({ theme }) => theme.text};
-        color: ${({ theme }) => theme.text};
-        text-transform: capitalize;
+    div {
+      padding: 0;
+      margin:0;
     }
   }
+  
   `;
