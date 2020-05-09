@@ -47,12 +47,14 @@ function App() {
               >
                 <Sidenav open={open} setOpen={setOpen} theme={theme} />
               </NavWrapper>
-              <MainWrapper>
-                <Topnav theme={theme} themeToggler={themeToggler} />
-                <Switch>
-                  {authPages}
-                  <Route component={Index} />
-                </Switch>
+              <MainWrapper theme={theme}>
+                <div className="container">
+                  <Topnav theme={theme} themeToggler={themeToggler} />
+                  <Switch>
+                    {authPages}
+                    <Route component={Index} />
+                  </Switch>
+                </div>
               </MainWrapper>
             </Wrapper>
           </Suspense>

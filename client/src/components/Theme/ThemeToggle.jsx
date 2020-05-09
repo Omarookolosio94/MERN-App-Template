@@ -6,7 +6,7 @@ const ThemeToggle = ({ theme, toggleTheme }) => {
   const icon =
     theme && theme === 'dark' ? 'fal fa-toggle-on' : 'fal fa-toggle-off';
   return (
-    <Button onClick={toggleTheme} light>
+    <Button onClick={toggleTheme} theme={theme} light>
       <i className={icon}></i>
       {theme}
     </Button>

@@ -1,7 +1,5 @@
 import React from 'react';
 import { bool } from 'prop-types';
-import { Icon, Navlink } from '../../Fixed/Styled';
-import { Link } from 'react-router-dom';
 import Togglenav from './Togglenav';
 import Navlinks from './Navlinks';
 

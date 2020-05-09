@@ -5,6 +5,9 @@ const Landing = lazy(() => import('../pages/public/Landing'));
 const Skills = lazy(() => import('../pages/public/Skills'));
 const Projects = lazy(() => import('../pages/public/Projects'));
 const Contact = lazy(() => import('../pages/public/Contact'));
+const Login = lazy(() => import('../pages/public/Login'));
+const Register = lazy(() => import('../pages/public/Register'));
+
 const Error = lazy(() => import('../pages/public/Error'));
 
 export const publicRoutes = [
@@ -31,6 +34,18 @@ export const publicRoutes = [
     exact: true,
     name: 'Contact',
     component: Contact
+  },
+  {
+    path: '/okolosio/manageportfolio',
+    exact: true,
+    name: 'Login',
+    component: Login
+  },
+  {
+    path: '/okolosio/createportfolioprofile',
+    exact: true,
+    name: 'Register',
+    component: Register
   },
   {
     name: 'Error',

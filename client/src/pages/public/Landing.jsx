@@ -5,7 +5,7 @@ import { Button } from '../../components/Fixed/Styled';
 const Landing = () => {
   return (
     <>
-      <div>Landing</div>
+      <p>Landing</p>
     </>
   );
 };
