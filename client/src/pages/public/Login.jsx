@@ -1,62 +1,83 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   FormCard,
   Form,
+  FormHeader,
   BackgroundImg
 } from '../../components/Fixed/Login/LoginStyled';
 import { Button, Icon } from '../../components/Fixed/Styled';
+import { loginAccount } from '../../redux/actions/auth';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
 
-const Login = () => {
+const Login = ({ loginAccount, isAuthenticated }) => {
   const theme = window.localStorage.getItem('theme');
+
+  const [formData, setFormData] = useState({
+    email: '',
+    password: ''
+  });
+
+  const submit = (e) => {
+    e.preventDefault();
+    // const res = convertData(e);
+    console.log(formData);
+    loginAccount(formData.email, formData.password);
+  };
+
+  const onChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  if (isAuthenticated) {
+    return <Redirect to="/" />;
+  }
+
   return (
     <BackgroundImg theme={theme}>
       <FormCard theme={theme}>
-        <Form theme={theme}>
-          <p>Login</p>
+        <Form theme={theme} onSubmit={submit}>
+          <FormHeader>
+            <i className="fal fa-lock"></i>
+            Login
+          </FormHeader>
 
-          <div class="form-field">
-            <div class="form-field__control">
+          <div className="form-field">
+            <div className="form-control">
               <input
-                id="name"
-                type="text"
-                class="form-field__input"
-                value=""
-                placeholder=" "
-                autocomplete="off"
-              />
-              <label for="name" class="form-field__label">
-                Name
-              </label>
-              <div class="form-field__bar"></div>
-            </div>
-          </div>
-
-          <div class="form-field">
-            <div class="form-field__control">
-              <input
-                id="email"
                 type="email"
-                class="form-field__input"
-                value=""
-                placeholder=" "
+                className="form-input"
+                name="email"
+                value={formData.email}
                 autocomplete="off"
+                onChange={onChange}
               />
-              <label for="email" class="form-field__label">
+              <label for="email" className="form-label">
                 Email
               </label>
-              <div class="form-field__bar"></div>
             </div>
           </div>
 
           <div class="form-field">
-            <div class="form-field__control">
-              <textarea class="form-field__textarea" placeholder=" "></textarea>
-              <label for="message" class="form-field__label">
-                Message
+            <div class="form-control">
+              <input
+                type="password"
+                class="form-input"
+                name="password"
+                value={formData.password}
+                autocomplete="off"
+                onChange={onChange}
+              />
+              <label for="password" class="form-label">
+                Password
               </label>
-              <div class="form-field__bar"></div>
             </div>
           </div>
+
           <Button theme={theme}>
             <Icon theme={theme}>
               <i className="fal fa-key"></i>
@@ -69,4 +90,13 @@ const Login = () => {
   );
 };
 
-export default Login;
+Login.propTypes = {
+  isAuthenticated: PropTypes.bool,
+  loginAccount: PropTypes.func.isRequired
+};
+
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(mapStateToProps, { loginAccount })(Login);

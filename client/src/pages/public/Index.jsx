@@ -4,8 +4,6 @@ import { pages } from '../../routes/Routes';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { Container } from '../../components/Fixed/Styled';
-
 const Index = () => {
   return (
     <>

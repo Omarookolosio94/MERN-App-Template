@@ -2,17 +2,18 @@ import styled from 'styled-components';
 import '../../App.scss';
 import { Img } from '../../utils/default/img';
 
-export const Container = styled.div`
-  z-index: 3;
-  max-width: 1000px;
-  margin: auto;
-  overflow: hidden;
-  padding: 0 1rem;
-`;
+// export const Container = styled.div`
+//   z-index: 3;
+//   max-width: 1000px;
+//   margin: auto;
+//   overflow: hidden;
+//   padding: 0 1rem;
+//   border: 1px solid gold;
+// `;
 
 export const BodyWrapper = styled.div`
   width: 100%;
-  height: 100%;
+  height: 90%;
 `;
 
 export const Wrapper = styled.div`
@@ -48,14 +49,34 @@ export const NavWrapper = styled.div`
 export const MainWrapper = styled.div`
   width: 100%;
   color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
-  height: 100vh;
+  height: 100%;
+  padding: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
 
   .container {
     width: 98%;
     margin: 0 auto;
-    height: 90%;
+    height: 100%;
   }
 
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: ${({ theme }) =>
+      theme === 'light' ? '#E4E4E4' : '#363537'};
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) =>
+      theme === 'light' ? '#E4E4E4' : '#363537'};
+    box-shadow: ${({ theme }) =>
+      theme === 'dark'
+        ? '0 0 0px 1000px #E4E4E4 inset'
+        : '0 0 0px 1000px #363537 inset'};
+  }
   @media only screen and (max-width: 768px) {
     /* position: absolute; */
     margin-top: 44px;
@@ -66,8 +87,6 @@ export const TopnavWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  /* border-bottom: ${({ theme }) =>
-    theme === 'light' ? '1px solid #bcbabe' : '1px solid #bcbabe'}; */
 
   .social-link {
     width: 60%;
@@ -307,6 +326,11 @@ export const Linkbox = styled.div`
       }
     }
   }
+  @media only screen and (max-width: 400px) {
+    .side-auth {
+      display: none;
+    }
+  }
 `;
 
 export const AlertBox = styled.div`
@@ -319,7 +343,6 @@ export const AlertBox = styled.div`
   overflow: hidden;
   width: 300px;
   text-transform: capitalize;
-  z-index: 100;
   color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
   border: ${({ theme }) =>
     theme === 'dark' ? '1px solid #E4E4E4' : '1px solid #363537'};
@@ -353,5 +376,6 @@ export const AlertBox = styled.div`
   &.danger {
     background-color: #dc3545;
   }
+
   /* } */
 `;

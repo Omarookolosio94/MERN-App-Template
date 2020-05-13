@@ -7,7 +7,8 @@ export const lightTheme = {
   textSize: '14px',
   lineHeight: '1',
   background: '#363537',
-  size: '1rem'
+  size: '1rem',
+  boxShadow: '0 0 0px 1000px #E4E4E4 inset'
 };
 export const darkTheme = {
   body: '#363537',
@@ -18,5 +19,6 @@ export const darkTheme = {
   lineHeight: '1',
   toggleBorder: '#6B8096',
   background: '#999',
-  size: '1rem'
+  size: '1rem',
+  boxShadow: '0 0 0px 1000px #363537 inset'
 };

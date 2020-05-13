@@ -5,7 +5,8 @@ import {
   USER_LOGGED_OUT,
   AUTH_ERROR,
   LOGIN_FAIL,
-  CLEAR_USER_PROFILE
+  CLEAR_USER_PROFILE,
+  LOGIN_SUCCESS
 } from './types';
 import Toast from '../../utils/toast/Toast';
 
@@ -28,11 +29,39 @@ export const loadUser = () => async (dispatch) => {
   }
 };
 
+//Login User
+export const loginAccount = (email, password) => async (dispatch) => {
+  const config = {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  };
+
+  const body = JSON.stringify({ email, password });
+
+  try {
+    const res = await axios.post('/api/matrix/auth', body, config);
+    dispatch({
+      type: LOGIN_SUCCESS,
+      payload: res.data
+    });
+
+    dispatch(loadUser());
+
+    Toast({ msg: 'Welcome Back', type: 'success' });
+  } catch (err) {
+    Toast({ msg: err.response.data.error, type: 'danger' });
+
+    dispatch({
+      type: LOGIN_FAIL
+    });
+  }
+};
+
 //LogOut User
 export const logoutAccount = () => async (dispatch) => {
   dispatch({
     type: USER_LOGGED_OUT
   });
-
-  Toast({ msg: 'Success', type: 'success' });
+  Toast({ msg: 'Logged Out of Account See You Later', type: 'success' });
 };

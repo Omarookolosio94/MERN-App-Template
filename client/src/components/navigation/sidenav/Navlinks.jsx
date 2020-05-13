@@ -31,7 +31,7 @@ const Navlinks = ({
           authLinks
             .filter((link) => link.linkname !== 'Profile')
             .map((link) => (
-              <Link className="navlink" to={link.path}>
+              <Link className="navlink side-auth" to={link.path}>
                 <Icon theme={theme}>
                   <i className={link.icon}></i>
                 </Icon>

@@ -3,11 +3,11 @@ import toaster from 'toasted-notes';
 import 'toasted-notes/src/styles.css';
 import { AlertBox } from '../../components/Fixed/Styled';
 
-export default ({ msg, type = 'default', duration = 2000 }) => {
+export default ({ msg, type = 'default', duration = 5000 }) => {
   const theme = window.localStorage.getItem('theme');
   const alertType = type && type;
   let icon;
-  console.log(type);
+  console.log(theme);
 
   switch (type) {
     case (type = 'success'):
@@ -30,7 +30,7 @@ export default ({ msg, type = 'default', duration = 2000 }) => {
     ),
     {
       duration: duration
-      // , position: "top-right"
+      // position: 'top-right'
     }
   );
 };
