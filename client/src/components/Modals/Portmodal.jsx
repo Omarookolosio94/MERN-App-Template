@@ -5,9 +5,17 @@ import { Img } from '../../utils/default/img';
 import { Icon, Button } from '../Fixed/Styled';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { array, bool } from 'prop-types';
+import { array, bool, func } from 'prop-types';
+import { logoutAccount } from '../../redux/actions/auth';
 
-const Portmodal = ({ open, close, theme, links }) => {
+const Portmodal = ({
+  open,
+  close,
+  theme,
+  links,
+  auth: { isAuthenticated, loading },
+  logoutAccount
+}) => {
   const img = theme && theme === 'dark' ? Img.potraitdark : Img.potraitlight;
   const logo = theme && theme === 'dark' ? Img.logodark : Img.logolight;
 
@@ -30,11 +38,21 @@ const Portmodal = ({ open, close, theme, links }) => {
             </p>
           </div>
           <div className="card-action">
-            {links &&
+            {isAuthenticated && !loading && (
+              <Button theme={theme} onClick={logoutAccount} light>
+                <Icon theme={theme}>
+                  <i className="fal fa-sign-out-alt"></i>
+                  <span className="text">Log Out</span>
+                </Icon>
+              </Button>
+            )}
+            {!isAuthenticated &&
+              !loading &&
+              links &&
               links
                 .filter((link) => link.linkname === 'Manage Account')
-                .map((link) => (
-                  <Button theme={theme} light>
+                .map((link, index) => (
+                  <Button key={index} theme={theme} light>
                     <Link
                       className="navlink"
                       to={link.path}
@@ -62,11 +80,14 @@ const Portmodal = ({ open, close, theme, links }) => {
 
 Portmodal.propTypes = {
   open: bool.isRequired,
-  links: array.isRequired
+  links: array.isRequired,
+  auth: array.isRequired,
+  logoutAccount: func.isRequired
 };
 
 const mapStateToProps = (state) => ({
-  links: state.config.links
+  links: state.config.links,
+  auth: state.auth && state.auth
 });
 
-export default connect(mapStateToProps)(Portmodal);
+export default connect(mapStateToProps, { logoutAccount })(Portmodal);

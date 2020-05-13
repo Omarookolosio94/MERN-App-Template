@@ -1,12 +1,13 @@
 import axios from 'axios';
-import storage from 'local-storage-fallback';
 import setAuthToken from '../../utils/token/setAuthToken';
 import {
   USER_LOGGED_IN,
   USER_LOGGED_OUT,
   AUTH_ERROR,
-  LOGIN_FAIL
+  LOGIN_FAIL,
+  CLEAR_USER_PROFILE
 } from './types';
+import Toast from '../../utils/toast/Toast';
 
 //Load User
 export const loadUser = () => async (dispatch) => {
@@ -25,4 +26,13 @@ export const loadUser = () => async (dispatch) => {
       type: AUTH_ERROR
     });
   }
+};
+
+//LogOut User
+export const logoutAccount = () => async (dispatch) => {
+  dispatch({
+    type: USER_LOGGED_OUT
+  });
+
+  Toast({ msg: 'Success', type: 'success' });
 };

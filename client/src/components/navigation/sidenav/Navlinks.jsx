@@ -4,7 +4,13 @@ import { Link } from 'react-router-dom';
 import { Linkbox, Icon } from '../../Fixed/Styled';
 import { connect } from 'react-redux';
 
-const Navlinks = ({ theme, open, links, authLinks }) => {
+const Navlinks = ({
+  theme,
+  open,
+  links,
+  authLinks,
+  auth: { isAuthenticated, loading }
+}) => {
   return (
     <>
       <Linkbox theme={theme} open={open}>
@@ -19,9 +25,11 @@ const Navlinks = ({ theme, open, links, authLinks }) => {
                 <span className="linkname">{link.linkname}</span>
               </Link>
             ))}
-        {/* {authLinks &&
+        {isAuthenticated &&
+          !loading &&
+          authLinks &&
           authLinks
-            .filter((link) => link.public === false)
+            .filter((link) => link.linkname !== 'Profile')
             .map((link) => (
               <Link className="navlink" to={link.path}>
                 <Icon theme={theme}>
@@ -29,7 +37,7 @@ const Navlinks = ({ theme, open, links, authLinks }) => {
                 </Icon>
                 <span className="linkname">{link.linkname}</span>
               </Link>
-            ))} */}
+            ))}
       </Linkbox>
     </>
   );
@@ -38,12 +46,14 @@ const Navlinks = ({ theme, open, links, authLinks }) => {
 Navlinks.propTypes = {
   open: bool.isRequired,
   links: array.isRequired,
-  authLinks: array.isRequired
+  authLinks: array.isRequired,
+  auth: array.isRequired
 };
 
 const mapStateToProps = (state) => ({
   links: state.config.links,
-  authLinks: state.config.authLinks
+  authLinks: state.config.authLinks,
+  auth: state.auth
 });
 
 export default connect(mapStateToProps)(Navlinks);

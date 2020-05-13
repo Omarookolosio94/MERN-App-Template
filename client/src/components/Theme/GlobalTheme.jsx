@@ -13,14 +13,6 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     position: relative;
     margin: 0;
-    
-
-
-    .container {
-      margin: 0 auto;
-      width: 98%;
-    }
-
     div {
       padding: 0;
       margin:0;

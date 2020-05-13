@@ -8,22 +8,6 @@ $fontLG: 20px;
 $fontSM: 12px;
 $font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
-// body {
-//   font-family: $font-family;
-//   font-size: $font;
-//   color: $primary;
-//   font-weight: 400;
-//   background-color: $light;
-//   box-sizing: border-box;
-//   position: relative;
-//   margin: 0;
-// }
-
-.container {
-  width: 90%;
-  margin: auto;
-}
-
 a {
   &:hover {
     outline: none;

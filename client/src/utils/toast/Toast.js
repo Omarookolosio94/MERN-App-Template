@@ -1,26 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import toaster from 'toasted-notes';
 import 'toasted-notes/src/styles.css';
+import { AlertBox } from '../../components/Fixed/Styled';
 
-export default ({
-  msg = 'Error connecting. Please refresh',
-  type = 'default',
-  duration = 2000
-}) => {
-  const bgColor = `slick-alert alert-${type}`;
+export default ({ msg, type = 'default', duration = 2000 }) => {
+  const theme = window.localStorage.getItem('theme');
+  const alertType = type && type;
   let icon;
+  console.log(type);
 
-  type === 'success' || type === 'success-outline'
-    ? (icon = 'alert-icon outline feather icon-check-circle')
-    : (icon = '');
+  switch (type) {
+    case (type = 'success'):
+      icon = 'fal fa-check-circle';
+      break;
+    case (type = 'danger'):
+      icon = 'fal fa-ban';
+      break;
+    default:
+      return (icon = '');
+  }
 
   toaster.notify(
     ({ onClose }) => (
-      <div className={bgColor}>
-        <i className={icon} onClick={onClose}></i>
+      <AlertBox theme={theme} className={alertType}>
+        {type && <i className={icon} onClick={onClose}></i>}
         <span>{msg}</span>
-        <i className="feather icon-x alert-icon" onClick={onClose}></i>
-      </div>
+        <i className="fal fa-times alert-icon" onClick={onClose}></i>
+      </AlertBox>
     ),
     {
       duration: duration

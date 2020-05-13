@@ -13,9 +13,9 @@ export const Modal = styled.div`
   background-color: ${({ theme }) =>
     theme === 'light' ? '#E4E4E4' : '#363537'};
   box-shadow: ${({ theme }) =>
-    theme === 'dark'
+    theme === 'light'
       ? ' 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);'
-      : ' 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);'};
+      : ' 0 1px 3px rgba(228, 228, 228, 0.24), 0 1px 2px rgba(228, 228, 228, 0.24);'};
   z-index: 50;
 
   @media only screen and (max-width: 768px) {

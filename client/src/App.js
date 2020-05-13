@@ -11,7 +11,12 @@ import { Provider } from 'react-redux';
 import { Toggler } from './utils/default/Toggler';
 import Sidenav from './components/navigation/sidenav/Sidenav';
 import { useOnClickOutside } from './hooks';
-import { Wrapper, NavWrapper, MainWrapper } from './components/Fixed/Styled';
+import {
+  Wrapper,
+  NavWrapper,
+  MainWrapper,
+  BodyWrapper
+} from './components/Fixed/Styled';
 import Topnav from './components/navigation/topnav/Topnav';
 
 const Index = lazy(() => import('./pages/public/Index'));
@@ -47,13 +52,20 @@ function App() {
               >
                 <Sidenav open={open} setOpen={setOpen} theme={theme} />
               </NavWrapper>
-              <MainWrapper theme={theme}>
+              <MainWrapper theme={theme} open={open}>
                 <div className="container">
-                  <Topnav theme={theme} themeToggler={themeToggler} />
-                  <Switch>
-                    {authPages}
-                    <Route component={Index} />
-                  </Switch>
+                  <Topnav
+                    theme={theme}
+                    themeToggler={themeToggler}
+                    open={open}
+                  />
+
+                  <BodyWrapper>
+                    <Switch>
+                      {authPages}
+                      <Route component={Index} />
+                    </Switch>
+                  </BodyWrapper>
                 </div>
               </MainWrapper>
             </Wrapper>

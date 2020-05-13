@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import '../../App.scss';
+import { Img } from '../../utils/default/img';
 
 export const Container = styled.div`
   z-index: 3;
@@ -9,9 +10,15 @@ export const Container = styled.div`
   padding: 0 1rem;
 `;
 
+export const BodyWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+`;
+
 export const Wrapper = styled.div`
   display: flex;
   height: 100vh;
+  overflow-y: hidden;
   padding: 0;
   margin: 0;
 
@@ -41,6 +48,13 @@ export const NavWrapper = styled.div`
 export const MainWrapper = styled.div`
   width: 100%;
   color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
+  height: 100vh;
+
+  .container {
+    width: 98%;
+    margin: 0 auto;
+    height: 90%;
+  }
 
   @media only screen and (max-width: 768px) {
     /* position: absolute; */
@@ -52,8 +66,8 @@ export const TopnavWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  border-bottom: ${({ theme }) =>
-    theme === 'light' ? '1px solid #bcbabe' : '1px solid #bcbabe'};
+  /* border-bottom: ${({ theme }) =>
+    theme === 'light' ? '1px solid #bcbabe' : '1px solid #bcbabe'}; */
 
   .social-link {
     width: 60%;
@@ -138,13 +152,26 @@ export const Icon = styled.button`
     color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
     font-size: 10px;
   }
+  .text-normal {
+    color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
+    font-size: 14px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .text-normal {
+      display: none;
+    }
+  }
 `;
 
 export const Button = styled.button`
   background: transparent;
-  border: ${({ theme }) =>
-    theme === 'dark' ? '1px solid #E4E4E4' : '1px solid #363537'};
-  border: ${({ light }) => light && 'none'};
+  border: none;
+  box-shadow: ${({ theme }) =>
+    theme === 'light'
+      ? ' 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);'
+      : ' 0 1px 3px rgba(228, 228, 228, 0.24), 0 1px 2px rgba(228, 228, 228, 0.24);'};
+  box-shadow: ${({ light }) => light && 'none'};
   color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
   padding: 6px 6px;
   font-size: 14px !important;
@@ -187,20 +214,21 @@ export const Button = styled.button`
   }}
 
   &:hover {
-    ${({ light, danger, success }) => {
-      switch (true) {
-        case light:
-          return `border : none;        
-          `;
-        case danger:
-          return `border : 1px solid #dc3545;            
-          `;
-        case success:
-          return `border : 1px solid #28a745`;
-        default:
-          return `border : 1px solid none`;
-      }
-    }}
+    box-shadow: ${({ success, theme }) =>
+      success && theme === 'light'
+        ? ' 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);'
+        : ' 0 1px 3px rgba(40, 167, 69, 1), 0 1px 2px rgba(40, 167, 69, 1);'};
+
+    box-shadow: ${({ danger, theme }) =>
+      danger && theme === 'light'
+        ? ' 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);'
+        : ' 0 1px 3px rgba(228, 228, 228, 0.24), 0 1px 2px rgba(228, 228, 228, 0.24);'};
+    box-shadow: ${({ theme }) =>
+      theme === 'light'
+        ? ' 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);'
+        : ' 0 1px 3px rgba(228, 228, 228, 0.24), 0 1px 2px rgba(228, 228, 228, 0.24);'};
+
+    box-shadow: ${({ light }) => light && 'none'};
   }
 `;
 
@@ -279,4 +307,51 @@ export const Linkbox = styled.div`
       }
     }
   }
+`;
+
+export const AlertBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 8px;
+  margin: 5px 0 0;
+  font-size: 14px;
+  overflow: hidden;
+  width: 300px;
+  text-transform: capitalize;
+  z-index: 100;
+  color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
+  border: ${({ theme }) =>
+    theme === 'dark' ? '1px solid #E4E4E4' : '1px solid #363537'};
+  background-color: ${({ theme }) =>
+    theme === 'dark' ? '#363537' : '#e4e4e4'};
+
+  .fal {
+    color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
+  }
+
+  .alert-icon {
+    width: 10px;
+    margin: 0 10px;
+  }
+
+  &.success,
+  &.danger {
+    color: #e4e4e4;
+    border: ${({ theme }) =>
+      theme === 'light' ? '1px solid #E4E4E4' : '1px solid #363537'};
+
+    .fal {
+      color: #e4e4e4;
+    }
+  }
+
+  &.success {
+    background-color: #28a745;
+  }
+
+  &.danger {
+    background-color: #dc3545;
+  }
+  /* } */
 `;
