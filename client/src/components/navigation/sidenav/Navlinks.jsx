@@ -1,5 +1,5 @@
 import React from 'react';
-import { bool, array } from 'prop-types';
+import { bool, array, object } from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Linkbox, Icon } from '../../Fixed/Styled';
 import { connect } from 'react-redux';
@@ -17,8 +17,8 @@ const Navlinks = ({
         {links &&
           links
             .filter((link) => link.public === true)
-            .map((link) => (
-              <Link className="navlink" to={link.path}>
+            .map((link, index) => (
+              <Link className="navlink" to={link.path} key={index}>
                 <Icon theme={theme}>
                   <i className={link.icon}></i>
                 </Icon>
@@ -30,8 +30,8 @@ const Navlinks = ({
           authLinks &&
           authLinks
             .filter((link) => link.linkname !== 'Profile')
-            .map((link) => (
-              <Link className="navlink side-auth" to={link.path}>
+            .map((link, index) => (
+              <Link className="navlink side-auth" to={link.path} key={index}>
                 <Icon theme={theme}>
                   <i className={link.icon}></i>
                 </Icon>
@@ -47,7 +47,7 @@ Navlinks.propTypes = {
   open: bool.isRequired,
   links: array.isRequired,
   authLinks: array.isRequired,
-  auth: array.isRequired
+  auth: object.isRequired
 };
 
 const mapStateToProps = (state) => ({

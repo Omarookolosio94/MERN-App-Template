@@ -7,7 +7,6 @@ import Message from './Message';
 const Profile = () => {
   return (
     <div>
-      <p>Profile Landing Page. With display of Skills , Experience and Pages</p>
       <Skills />
       <Pages />
       <Projects />

@@ -1,5 +1,5 @@
-import React, { Suspense, lazy } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import React, { Suspense } from 'react';
+import { Switch } from 'react-router-dom';
 import { pages } from '../../routes/Routes';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';

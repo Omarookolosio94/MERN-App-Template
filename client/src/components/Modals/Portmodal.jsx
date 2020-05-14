@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Modal } from '../Fixed/Modal';
 import { Card } from '../Fixed/Card';
 import { Img } from '../../utils/default/img';
 import { Icon, Button } from '../Fixed/Styled';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { array, bool, func } from 'prop-types';
+import { array, bool, func, object } from 'prop-types';
 import { logoutAccount } from '../../redux/actions/auth';
 
 const Portmodal = ({
@@ -22,7 +22,7 @@ const Portmodal = ({
   return (
     <Modal open={open && open} theme={theme}>
       <Card theme={theme}>
-        <div class="card-side card-back">
+        <div className="card-side card-back">
           <div className="card-close">
             <Button theme={theme} onClick={() => close()} light>
               <Icon>
@@ -30,7 +30,7 @@ const Portmodal = ({
               </Icon>
             </Button>
           </div>
-          <div class="card-detail">
+          <div className="card-detail">
             <span className="title">Okolosio Oghenemaro</span>
             <img src={logo} alt="" />
             <p>
@@ -67,11 +67,11 @@ const Portmodal = ({
                 ))}
           </div>
         </div>
-        <div class="card-side card-front ">
-          <div class="card-pic pic-front">
+        <div className="card-side card-front ">
+          <div className="card-pic pic-front">
             <img src={img} alt="" />
           </div>
-          <div class="card-text">I am Okolosio</div>
+          <div className="card-text">I am Okolosio</div>
         </div>
       </Card>
     </Modal>
@@ -81,7 +81,7 @@ const Portmodal = ({
 Portmodal.propTypes = {
   open: bool.isRequired,
   links: array.isRequired,
-  auth: array.isRequired,
+  auth: object.isRequired,
   logoutAccount: func.isRequired
 };
 

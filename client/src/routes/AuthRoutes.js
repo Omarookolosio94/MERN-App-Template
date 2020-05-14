@@ -28,6 +28,7 @@ export const authRoutes = [
 export const authPages = authRoutes.map((route, index) => {
   return route.component ? (
     <PrivateRoute
+      key={index}
       exact={route.exact}
       path={route.path}
       component={route.component}

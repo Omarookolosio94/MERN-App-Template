@@ -9,33 +9,47 @@ export const H1 = styled.h1`
   @media only screen and (max-width: 768px) {
     font-size: 2rem;
   }
+  @media only screen and (max-width: 600px) {
+    font-size: 1.5rem;
+    line-height: 1.5;
+  }
+`;
+
+export const PageTitle = styled.h1`
+  font-size: 1.3rem;
+  color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
+  text-transform: capitalize;
+  font-weight: bold;
+`;
+
+export const Paragraph = styled.p`
+  color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
+  line-height: 0;
+  margin-bottom: 1rem;
 `;
 
 export const PageWrapper = styled.div`
   margin: 1rem 0;
-  height: 90%;
   display: flex;
   flex-direction: column;
+  position: absolute;
   align-items: center;
   justify-content: center;
+  overflow-x: hidden;
 `;
 
 export const LandingWrapper = styled.div`
-  border: 1px solid blue;
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  flex-wrap: wrap-reverse;
   height: auto;
-  margin: 0 auto;
+  margin: 1rem auto;
   text-align: center;
 
   .land-action {
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 60%;
+    width: 50%;
     height: 90%;
     margin: 1rem 0;
   }
@@ -65,11 +79,10 @@ export const LandingWrapper = styled.div`
   }
 
   .pro-img {
-    border: 1px solid red;
     width: 300px;
+    margin: 0 0 0 15vw;
     height: 100%;
     overflow: hidden;
-    margin: 0 auto;
     animation: slideIn 1.5s ease-in-out forwards;
 
     img {
@@ -80,7 +93,7 @@ export const LandingWrapper = styled.div`
 
   @media only screen and (max-width: 768px) {
     .land-action {
-      width: 60%;
+      width: 50%;
       height: 90%;
     }
 
@@ -90,8 +103,38 @@ export const LandingWrapper = styled.div`
 
       img {
         width: 200px;
-        height: 350px;
+        height: 300px;
       }
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    flex-direction: column-reverse;
+
+    .land-action {
+      width: 90%;
+      height: 90%;
+    }
+
+    .pro-img {
+      margin: 2rem 0 2rem 0;
+      width: 200px;
+      height: 250px;
+
+      img {
+        width: 150px;
+        height: 250px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    .pro-img {
+      margin: 2rem 0 2rem 0;
+    }
+  }
+  @media only screen and (max-width: 300px) {
+    .pro-img {
+      margin: 2rem 0 2rem 0;
     }
   }
 `;

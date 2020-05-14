@@ -21,8 +21,6 @@ const Login = ({ loginAccount, isAuthenticated }) => {
 
   const submit = (e) => {
     e.preventDefault();
-    // const res = convertData(e);
-    console.log(formData);
     loginAccount(formData.email, formData.password);
   };
 
@@ -53,26 +51,26 @@ const Login = ({ loginAccount, isAuthenticated }) => {
                 className="form-input"
                 name="email"
                 value={formData.email}
-                autocomplete="off"
+                autoComplete="off"
                 onChange={onChange}
               />
-              <label for="email" className="form-label">
+              <label htmlFor="email" className="form-label">
                 Email
               </label>
             </div>
           </div>
 
-          <div class="form-field">
-            <div class="form-control">
+          <div className="form-field">
+            <div className="form-control">
               <input
                 type="password"
-                class="form-input"
+                className="form-input"
                 name="password"
                 value={formData.password}
-                autocomplete="off"
+                autoComplete="off"
                 onChange={onChange}
               />
-              <label for="password" class="form-label">
+              <label htmlFor="password" className="form-label">
                 Password
               </label>
             </div>

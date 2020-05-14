@@ -1,5 +1,5 @@
 import React from 'react';
-import { func, string } from 'prop-types';
+import { func } from 'prop-types';
 import { Button } from '../Fixed/Styled';
 
 const ThemeToggle = ({ theme, toggleTheme }) => {
@@ -14,7 +14,6 @@ const ThemeToggle = ({ theme, toggleTheme }) => {
 };
 
 ThemeToggle.propTypes = {
-  //   theme: string.isRequired,
   toggleTheme: func.isRequired
 };
 export default ThemeToggle;

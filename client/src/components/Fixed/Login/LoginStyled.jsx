@@ -30,7 +30,6 @@ export const FormCard = styled.div`
 `;
 
 export const BackgroundImg = styled.div`
-  border: 1px solid red;
   height: 100%;
   background: ${({ theme }) =>
     theme === 'light'
@@ -48,6 +47,7 @@ export const Form = styled.form`
 
   .form-field {
     display: block;
+    padding: 6px 0;
     margin-bottom: 16px;
     box-shadow: ${({ theme }) =>
       theme === 'light'

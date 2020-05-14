@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import toaster from 'toasted-notes';
 import 'toasted-notes/src/styles.css';
 import { AlertBox } from '../../components/Fixed/Styled';
@@ -7,7 +7,6 @@ export default ({ msg, type = 'default', duration = 5000 }) => {
   const theme = window.localStorage.getItem('theme');
   const alertType = type && type;
   let icon;
-  console.log(theme);
 
   switch (type) {
     case (type = 'success'):

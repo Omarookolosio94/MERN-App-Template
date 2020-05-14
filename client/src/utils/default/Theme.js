@@ -5,7 +5,7 @@ export const lightTheme = {
   shadow: '0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)',
   toggleBorder: '#FFF',
   textSize: '14px',
-  lineHeight: '1',
+  lineHeight: '0',
   background: '#363537',
   size: '1rem',
   boxShadow: '0 0 0px 1000px #E4E4E4 inset'
@@ -16,7 +16,7 @@ export const darkTheme = {
   border: '1px solid #E4E4E4',
   shadow: '0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)',
   textSize: '14px',
-  lineHeight: '1',
+  lineHeight: '0',
   toggleBorder: '#6B8096',
   background: '#999',
   size: '1rem',

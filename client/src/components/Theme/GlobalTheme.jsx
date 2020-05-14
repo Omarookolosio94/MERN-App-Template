@@ -11,7 +11,6 @@ export const GlobalStyles = createGlobalStyle`
     font-size:  ${({ theme }) => theme.textSize};
     line-height:  ${({ theme }) => theme.lineHeight};
     box-sizing: border-box;
-    position: relative;
     margin: 0;
     div {
       padding: 0;

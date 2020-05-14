@@ -1,5 +1,5 @@
 import React, { useState, Fragment } from 'react';
-import { bool, array } from 'prop-types';
+import { bool, array, object } from 'prop-types';
 import ThemeToggle from '../../Theme/ThemeToggle';
 import { TopnavWrapper, Href, Icon, Button } from '../../Fixed/Styled';
 import { connect } from 'react-redux';
@@ -25,15 +25,16 @@ const Topnav = ({
         <TopnavWrapper theme={theme} open={open}>
           <div className="social-link">
             {links &&
-              links.map((link) => (
+              links.map((link, index) => (
                 <Href
+                  key={index}
                   href={link.path}
                   theme={theme}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Icon>
-                    <i class={link.icon}></i>
+                  <Icon theme={theme}>
+                    <i className={link.icon}></i>
                   </Icon>
                   <span className="linkname">{link.name}</span>
                 </Href>
@@ -46,8 +47,8 @@ const Topnav = ({
                 authLinks &&
                 authLinks
                   .filter((link) => link.linkname === 'Profile')
-                  .map((link) => (
-                    <Button theme={theme} light>
+                  .map((link, index) => (
+                    <Button theme={theme} light key={index}>
                       <Link className="navlink" to={link.path}>
                         <Icon theme={theme}>
                           <i className={link.icon}></i>
@@ -77,7 +78,7 @@ Topnav.propTypes = {
   open: bool.isRequired,
   links: array.isRequired,
   authLinks: array.isRequired,
-  auth: array.isRequired
+  auth: object.isRequired
 };
 
 const mapStateToProps = (state) => ({

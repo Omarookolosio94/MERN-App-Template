@@ -3,49 +3,52 @@ import {
   PageWrapper,
   H1,
   LandingWrapper
-} from '../../components/Fixed/PagesStyled';
+} from '../../components/Fixed/LandingStyle';
 import { Img } from '../../utils/default/img';
 import { Button, Icon } from '../../components/Fixed/Styled';
 import { Link } from 'react-router-dom';
+import contents from '../../utils/contents/contents';
 
 const Landing = () => {
   const theme = window.localStorage.getItem('theme');
 
+  const content = contents.home;
+  const {
+    para1,
+    para2,
+    para3,
+    para4,
+    buttonName,
+    imgLight,
+    imgDark,
+    portName
+  } = content;
+
   return (
     <PageWrapper theme={theme}>
       <LandingWrapper>
-        <div class="land-action">
+        <div className="land-action">
           <p>
-            Hi, I am <span class="text-bold">Okolosio</span> and have got good
-            news for you
+            {para1} <span className="text-bold">{portName}</span> {para2}
           </p>
-          <H1 theme={theme}>
-            &apos;Building Your Web application just got easier&apos;
-          </H1>
+          <H1 theme={theme}>&apos;{para3}&apos;</H1>
 
-          <div class="land-detail">
-            <p class>
-              I am a Web Developer and I design mobile-friendly web applications
-              using Javascript as a core language. Besides programming I am
-              passionate about the environment and its conservation.
-            </p>
+          <div className="land-detail">
+            <p className>{para4}</p>
 
-            <Button theme={theme}>
+            <Button theme={theme} success>
               <Link className="navlink" to="/okolosio/contact">
                 <Icon theme={theme}>
                   <i className="fal fa-globe"></i>
-                  <span className="text">Start Building</span>
+                  <span className="text">{buttonName}</span>
                 </Icon>
               </Link>
             </Button>
           </div>
         </div>
-        <div class="pro-auth">
-          <div class="pro-img">
-            <img
-              src={theme === 'light' ? Img.potraitlight : Img.potraitdark}
-              alt=""
-            />
+        <div className="pro-auth">
+          <div className="pro-img">
+            <img src={theme === 'light' ? imgLight : imgDark} alt={portName} />
           </div>
         </div>
       </LandingWrapper>

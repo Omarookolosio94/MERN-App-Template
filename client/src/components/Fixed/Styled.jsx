@@ -1,15 +1,5 @@
 import styled from 'styled-components';
 import '../../App.scss';
-import { Img } from '../../utils/default/img';
-
-// export const Container = styled.div`
-//   z-index: 3;
-//   max-width: 1000px;
-//   margin: auto;
-//   overflow: hidden;
-//   padding: 0 1rem;
-//   border: 1px solid gold;
-// `;
 
 export const BodyWrapper = styled.div`
   width: 100%;
@@ -19,7 +9,6 @@ export const BodyWrapper = styled.div`
 export const Wrapper = styled.div`
   display: flex;
   height: 100vh;
-  overflow-y: hidden;
   padding: 0;
   margin: 0;
 
@@ -32,6 +21,7 @@ export const NavWrapper = styled.div`
   height: 100vh;
   top: 0;
   left: 0;
+  z-index: 200;
   transition: all 0.2s linear;
   background: ${({ theme }) => (theme === 'dark' ? '#bcbabe' : '#363537')};
   color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
@@ -51,8 +41,6 @@ export const MainWrapper = styled.div`
   color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
   height: 100%;
   padding: 0;
-  overflow-y: scroll;
-  overflow-x: hidden;
 
   .container {
     width: 98%;
@@ -60,25 +48,7 @@ export const MainWrapper = styled.div`
     height: 100%;
   }
 
-  &::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: ${({ theme }) =>
-      theme === 'light' ? '#E4E4E4' : '#363537'};
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: ${({ theme }) =>
-      theme === 'light' ? '#E4E4E4' : '#363537'};
-    box-shadow: ${({ theme }) =>
-      theme === 'dark'
-        ? '0 0 0px 1000px #E4E4E4 inset'
-        : '0 0 0px 1000px #363537 inset'};
-  }
   @media only screen and (max-width: 768px) {
-    /* position: absolute; */
     margin-top: 44px;
   }
 `;
@@ -87,10 +57,13 @@ export const TopnavWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  z-index: 500;
 
   .social-link {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     width: 60%;
-    padding: 8px 0;
   }
 
   .profile-link {
@@ -125,15 +98,31 @@ export const TopnavWrapper = styled.div`
 `;
 
 export const Href = styled.a`
-  text-decoration: none;
-  margin-right: 6px;
-  text-transform: capitalize;
+  transition: all 0.2s linear;
+  overflow: hidden;
   color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
+  text-decoration: none;
+  width: auto;
+  display: flex;
+  align-items: center;
+  padding: 6px 8px;
+  text-transform: capitalize;
+
+  &:hover {
+    color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
+    background-color: ${({ theme }) =>
+      theme === 'dark' ? '#363537' : '#e4e4e4'};
+
+    .fal.fab {
+      color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
+    }
+  }
 
   i.fal,
   i.fab {
     color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
   }
+
   &:hover {
     text-decoration: underline;
   }
@@ -154,26 +143,30 @@ export const Href = styled.a`
   }
 `;
 
-export const Icon = styled.button`
+export const Icon = styled.div`
   /* width: 100%; */
   background-color: transparent;
   border: none;
   outline: none;
-  color: ${({ theme }) => (theme === 'light' ? '#E4E4E4' : '#363537')};
+  color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
 
-  .fal {
+  .fal,
+  .fab {
     font-size: 1rem;
     padding: 5px;
     color: ${({ theme }) => (theme === 'light' ? '#E4E4E4' : '#363537')};
+    margin-right: 10px;
   }
 
   .text {
     color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
     font-size: 10px;
+    text-transform: capitalize;
   }
   .text-normal {
     color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
     font-size: 14px;
+    text-transform: capitalize;
   }
 
   @media only screen and (max-width: 600px) {
@@ -199,6 +192,10 @@ export const Button = styled.button`
   outline: none;
   cursor: pointer;
   transition-duration: 0.4s;
+
+  .navlink {
+    text-decoration: none;
+  }
 
   .fal {
     margin-right: 5px;
@@ -285,7 +282,7 @@ export const Linkbox = styled.div`
     text-decoration: none;
 
     .fal {
-      margin-right: 4px;
+      margin-right: 15px;
     }
 
     &:hover {
@@ -321,6 +318,7 @@ export const Linkbox = styled.div`
   @media only screen and (max-width: 600px) {
     height: 44px;
     .navlink {
+      padding-left: 8px;
       .fal {
         display: none;
       }
