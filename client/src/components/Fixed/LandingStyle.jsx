@@ -20,12 +20,28 @@ export const PageTitle = styled.h1`
   color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
   text-transform: capitalize;
   font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: left;
+`;
+
+export const Visit = styled.a`
+  text-decoration: none;
+  color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
+  font-weight: bold;
+
+  &:hover {
+    text-decoration: underline;
+    color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
+  }
 `;
 
 export const Paragraph = styled.p`
   color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
-  line-height: 0;
   margin-bottom: 1rem;
+
+  .text-bold {
+    font-weight: bold;
+  }
 `;
 
 export const PageWrapper = styled.div`
@@ -36,6 +52,17 @@ export const PageWrapper = styled.div`
   align-items: center;
   justify-content: center;
   overflow-x: hidden;
+
+  a {
+    text-decoration: none;
+    color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
+    font-weight: bold;
+
+    &:hover {
+      text-decoration: underline;
+      color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
+    }
+  }
 `;
 
 export const LandingWrapper = styled.div`

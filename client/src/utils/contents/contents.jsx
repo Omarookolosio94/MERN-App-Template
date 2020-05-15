@@ -23,15 +23,74 @@ export default {
       positon: 'I currently work as a Software Developer at',
       company: 'Itap Solutions',
       location: 'Ikeja , Lagos Nigeria.',
-      action: 'Visit my LinkedIn profile for more details or just',
-      link: 'Contact Me'
+      companyLink: 'http://www.itapsolutions.net/',
+      action: 'to Build Your Web Apllication',
+      link: 'Contact Me',
+      linkTo: '/okolosio/contact'
     },
     skill: [
       {
-        name: '',
-        detail: '',
-        rating: 0,
-        expLength: 0
+        name: 'HTML',
+        detail: 'HTML for UI/UX',
+        rating: 5,
+        expLength: 2,
+        icon: 'fab fa-html5'
+      },
+      {
+        name: 'CSS',
+        detail: 'CSS for UI/UX',
+        rating: 5,
+        expLength: 2,
+        icon: 'fab fa-css3'
+      },
+      {
+        name: 'Javascript',
+        detail: 'Vanilla JS , JSX for React',
+        rating: 4,
+        expLength: 2,
+        icon: 'fab fa-js'
+      },
+      {
+        name: 'Node',
+        detail: 'Node JS & Express for Backend',
+        rating: 4,
+        expLength: 2,
+        icon: 'fab fa-node'
+      },
+      {
+        name: 'MongoDB',
+        detail: 'Non Relational Database Management',
+        rating: 4,
+        expLength: 2,
+        icon: 'fab fa-mdb'
+      },
+      {
+        name: 'React',
+        detail: 'Front End Framework',
+        rating: 4,
+        expLength: 1,
+        icon: 'fab fa-react'
+      },
+      {
+        name: 'Git',
+        detail: 'Git for Project Management',
+        rating: 3.5,
+        expLength: 2,
+        icon: 'fab fa-react'
+      },
+      {
+        name: 'SASS',
+        detail: 'CSS Framework for UI design',
+        rating: 3.5,
+        expLength: 2,
+        icon: 'fab fa-sass'
+      },
+      {
+        name: 'Bootstrap',
+        detail: 'Bootstrap Framework for UI design',
+        rating: 5,
+        expLength: 2,
+        icon: 'fab fa-bootstrap'
       }
     ]
   }

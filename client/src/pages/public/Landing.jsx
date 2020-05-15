@@ -34,7 +34,7 @@ const Landing = () => {
           <H1 theme={theme}>&apos;{para3}&apos;</H1>
 
           <div className="land-detail">
-            <p className>{para4}</p>
+            <p>{para4}</p>
 
             <Button theme={theme} success>
               <Link className="navlink" to="/okolosio/contact">
