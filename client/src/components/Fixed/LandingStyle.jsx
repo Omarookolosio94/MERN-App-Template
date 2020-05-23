@@ -42,6 +42,17 @@ export const Paragraph = styled.p`
   .text-bold {
     font-weight: bold;
   }
+
+  a {
+    text-decoration: none;
+    color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
+    font-weight: bold;
+
+    &:hover {
+      text-decoration: underline;
+      color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
+    }
+  }
 `;
 
 export const PageWrapper = styled.div`

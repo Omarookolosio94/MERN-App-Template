@@ -124,7 +124,7 @@ exports.createMessage = async (req, res, next) => {
 
     return res.status(200).json({
       success: true,
-      data: 'Message Sent '
+      data: 'Thanks, Will Reply You in Due Time'
     });
   } catch (err) {
     if (err.name === 'ValidationError') {

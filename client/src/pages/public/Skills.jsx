@@ -36,7 +36,7 @@ const Skills = () => {
                 {currentPosition.company}
               </a>{' '}
               {currentPosition.location}{' '}
-              <Link to={currentPosition.linkTo}>{currentPosition.link}</Link>
+              <Link to={currentPosition.linkTo}>{currentPosition.link}</Link>{' '}
               {currentPosition.action}
             </Paragraph>
           </div>

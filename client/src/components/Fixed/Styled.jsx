@@ -3,7 +3,7 @@ import '../../App.scss';
 
 export const BodyWrapper = styled.div`
   width: 100%;
-  height: 90%;
+  height: 90vh;
 `;
 
 export const Wrapper = styled.div`
@@ -19,6 +19,7 @@ export const Wrapper = styled.div`
 
 export const NavWrapper = styled.div`
   height: 100vh;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 200;
@@ -37,8 +38,10 @@ export const NavWrapper = styled.div`
 `;
 
 export const MainWrapper = styled.div`
-  width: 100%;
+  width: 95%;
+  margin-left: ${({ open }) => (open ? '150px' : '40px')};
   color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
+  transition: all 0.2s linear;
   height: 100%;
   padding: 0;
 
@@ -50,6 +53,7 @@ export const MainWrapper = styled.div`
 
   @media only screen and (max-width: 768px) {
     margin-top: 44px;
+    margin-left: 0;
   }
 `;
 
@@ -191,6 +195,7 @@ export const Button = styled.button`
   margin-right: 5px;
   outline: none;
   cursor: pointer;
+  transition: all 0.2s linear;
   transition-duration: 0.4s;
 
   .navlink {

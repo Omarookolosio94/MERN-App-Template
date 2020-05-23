@@ -12,6 +12,7 @@ export const GlobalStyles = createGlobalStyle`
     line-height:  ${({ theme }) => theme.lineHeight};
     box-sizing: border-box;
     margin: 0;
+    overflow-x: hidden;
     div {
       padding: 0;
       margin:0;

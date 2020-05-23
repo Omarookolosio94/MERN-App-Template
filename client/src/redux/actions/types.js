@@ -1,3 +1,4 @@
+//AUTHENTICATION TYPES
 export const SET_ALERT = 'SET_ALERT';
 export const REMOVE_ALERT = 'REMOVE_ALERT';
 export const AUTH_ERROR = 'AUTH_ERROR';
@@ -6,3 +7,9 @@ export const USER_LOGGED_IN = 'USER_LOGGED_IN';
 export const USER_LOGGED_OUT = 'USER_LOGGED_OUT';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAIL = 'LOGIN_FAIL';
+
+//MESSAGE TYPES
+export const SENDING_MSG = 'SENDING_MSG';
+export const SENDING_MSG_FAIL = 'SENDING_MSG_FAIL';
+
+export const SUCCESS = 'SUCCESSS';

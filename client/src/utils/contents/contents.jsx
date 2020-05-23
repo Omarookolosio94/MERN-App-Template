@@ -1,4 +1,5 @@
 import { Img } from '../default/img';
+import Contact from '../../pages/public/Contact';
 
 export default {
   home: {
@@ -13,6 +14,17 @@ export default {
     imgLight: Img.potraitlight,
     imgDark: Img.potraitdark,
     portName: 'Okolosio'
+  },
+
+  contact: {
+    title: 'Contact',
+    para1:
+      'I am interested in freelance opportunities. Need to build a website for a voluntary organisation or Social awareness campaign (related to but not limited to Child Mortality, Modern Day Slavery, Gender Equality, Green Movements and so on), I will build for a third the actual price.',
+    para2: `Any other questions or request, don't hesitate to contact me on social media or give me a call`,
+    action: '+234 Call Me',
+    icon: 'fal fa-phone',
+    alt: 'Okolosio',
+    phoneNo: 'tel:+2347019069486'
   },
 
   skills: {
