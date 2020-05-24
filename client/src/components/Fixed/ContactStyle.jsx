@@ -64,11 +64,11 @@ export const ContactCard = styled.div`
     margin: 1rem auto 1rem;
   }
   @media only screen and (max-width: 600px) {
-    width: 60%;
+    width: 80%;
     margin: 2rem auto;
   }
   @media only screen and (max-width: 400px) {
-    width: 90%;
+    width: 100%;
     margin: 2rem auto;
   }
 `;

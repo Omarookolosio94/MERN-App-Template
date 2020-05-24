@@ -9,7 +9,7 @@ export default {
     para2: 'and have got good news for you',
     para3: 'Building Your Web application just got easier',
     para4:
-      '   I am a Web Developer and I design mobile-friendly web applicationsusing Javascript as a core language. Besides programming I am passionate about the environment and its conservation.',
+      '   I am a Web Developer and I design mobile-friendly web applications using Javascript as a core language. Besides programming I am passionate about the environment and its conservation.',
     buttonName: 'Start Building',
     imgLight: Img.potraitlight,
     imgDark: Img.potraitdark,
@@ -138,7 +138,7 @@ export default {
         link: 'https://bit.ly/38F5NDB',
         description:
           'Website template for a publication company. Responsive, mobile-friendly DRY design. Built using Basic Language; HTML, SASS and Vanilla JS.',
-        tech: ['HTML', 'CSS', 'JS'],
+        tech: ['HTML', 'CSS', 'Javascript'],
         features: ['Mobile Friendly', 'Responsive']
       },
       {
@@ -147,7 +147,7 @@ export default {
         link: 'https://bit.ly/2SxCYTF',
         description:
           ' Website template for a construction company. Built entirely using HTML and JS. Responsive, mobile-friendly , Single page design.',
-        tech: ['HTML', 'CSS', 'JS'],
+        tech: ['HTML', 'CSS', 'Javascript'],
         features: ['Mobile Friendly', 'Responsive', 'Single Page']
       }
     ]

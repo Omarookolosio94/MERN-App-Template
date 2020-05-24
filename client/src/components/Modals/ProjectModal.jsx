@@ -17,12 +17,38 @@ const ProjectModal = ({ open, close, theme, data }) => {
             <PageTitle theme={theme}>{data.name}</PageTitle>
             <Button theme={theme} onClick={() => close()} light>
               <Icon>
-                <i className="fal fa-times"></i>
+                Close <i className="fal fa-times"></i>
               </Icon>
             </Button>
           </div>
           <div className="pro-detail">
             <p className="description">{data.description}</p>
+            <div className="tech">
+              <p className="text-bold">Language</p>
+              <div>
+                {data.tech.map((el, index) => (
+                  <span key={index}>{el},</span>
+                ))}
+              </div>
+            </div>
+            <div className="features">
+              <p className="text-bold">Features</p>
+              <div>
+                {data.features.map((el, index) => (
+                  <span key={index}>{el},</span>
+                ))}
+              </div>
+            </div>
+            <div className="link">
+              <a
+                className="text-bold"
+                href={data.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fal fa-link mr"></i> Visit Live
+              </a>
+            </div>
           </div>
         </ModalContent>
       )}

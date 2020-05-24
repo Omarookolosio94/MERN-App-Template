@@ -4,7 +4,7 @@ import { Img } from '../../../utils/default/img';
 export const FormCard = styled.div`
   height: auto;
   width: 300px;
-  margin: 1rem auto 1rem 60%;
+  margin: 1rem auto 1rem 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,11 +20,11 @@ export const FormCard = styled.div`
     margin: 1rem auto 1rem 40%;
   }
   @media only screen and (max-width: 600px) {
-    width: 60%;
+    width: 80%;
     margin: 2rem auto;
   }
   @media only screen and (max-width: 400px) {
-    width: 90%;
+    width: 100%;
     margin: 2rem auto;
   }
 `;

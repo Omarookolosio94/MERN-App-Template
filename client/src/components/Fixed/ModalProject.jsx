@@ -22,8 +22,8 @@ export const ModalProject = styled.div`
 
 export const ModalContent = styled.div`
   width: 400px;
-  height: 400px;
-  padding: 10px;
+  min-height: 400px;
+  padding: 20px;
   color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
   background-color: ${({ theme }) =>
     theme === 'light' ? '#E4E4E4' : '#363537'};
@@ -34,13 +34,24 @@ export const ModalContent = styled.div`
     justify-content: space-between;
   }
 
-  ul {
-    display: block;
-    height: auto;
+  span {
+    margin-right: 10px;
   }
-  .list-item {
-    list-style: none;
+
+  .tech {
+    margin: 2rem 0;
   }
+
+  .features div {
+    display: flex;
+    flex-wrap: wrap;
+    height: 50px;
+  }
+
+  .text-bold {
+    font-weight: bold;
+  }
+
   @media only screen and (max-width: 768px) {
   }
 
