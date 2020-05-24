@@ -301,6 +301,16 @@ export const Linkbox = styled.div`
     }
   }
 
+  .active {
+    color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
+    background-color: ${({ theme }) =>
+      theme === 'dark' ? '#363537' : '#e4e4e4'};
+
+    .fal {
+      color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
+    }
+  }
+
   @media only screen and (max-width: 768px) {
     width: auto;
     display: flex;

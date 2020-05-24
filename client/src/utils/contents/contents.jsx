@@ -105,5 +105,51 @@ export default {
         icon: 'fab fa-bootstrap'
       }
     ]
+  },
+  projects: {
+    title: 'Projects',
+    project: [
+      {
+        name: 'Airview',
+        summary: 'MERN Application',
+        tech: ['MonogDB', 'React', 'Express', 'NodeJS'],
+        link: 'https://bit.ly/3bQW4fe',
+        description:
+          ' Airview is a web service dedicated to delivering efficient and fast publication of written works. It is a MERN application that gives users access to create profiles write articles as well as add comments. It also gives users access to update existing profiles or written articles.',
+        features: [
+          'CMS Application',
+          'Mobile Friendly',
+          'CRUD Functionality',
+          'Authentication'
+        ]
+      },
+      {
+        name: 'Blogspot',
+        summary: 'Node Express application',
+        link: 'https://blospot.herokuapp.com/',
+        description:
+          'Blospot is a blog application. Built using NODE and Express, Responsive design with CRUD functionality.',
+        tech: ['Node', 'Express', 'MongoDB', 'EJS'],
+        features: ['CMS Application', 'CRUD Functionality', 'Responsive']
+      },
+      {
+        name: 'Ariere',
+        summary: 'Web Interface',
+        link: 'https://bit.ly/38F5NDB',
+        description:
+          'Website template for a publication company. Responsive, mobile-friendly DRY design. Built using Basic Language; HTML, SASS and Vanilla JS.',
+        tech: ['HTML', 'CSS', 'JS'],
+        features: ['Mobile Friendly', 'Responsive']
+      },
+      {
+        name: 'Dapskic Construction',
+        summary: 'Website Template',
+        link: 'https://bit.ly/2SxCYTF',
+        description:
+          ' Website template for a construction company. Built entirely using HTML and JS. Responsive, mobile-friendly , Single page design.',
+        tech: ['HTML', 'CSS', 'JS'],
+        features: ['Mobile Friendly', 'Responsive', 'Single Page']
+      }
+    ]
   }
 };

@@ -42,7 +42,7 @@ export const ContentBox = styled.div`
   }
 `;
 
-export const SkillBox = styled.div`
+export const ProjectBox = styled.div`
   width: 90%;
   margin: 3rem auto;
   display: inline-flex;
@@ -61,10 +61,10 @@ export const SkillBox = styled.div`
   }
 `;
 
-export const SKill = styled.div`
+export const Project = styled.div`
   padding: 1rem 0.5rem;
-  height: 180px;
-  width: 150px;
+  height: 350px;
+  width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -76,31 +76,19 @@ export const SKill = styled.div`
       ? ' 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);'
       : ' 0 1px 3px rgba(228, 228, 228, 0.24), 0 1px 2px rgba(228, 228, 228, 0.24);'};
 
-  .logo i {
-    font-size: 2rem;
-  }
-
-  .detail i.full {
-    color: gold;
-    font-weight: bold;
-  }
-
   @media only screen and (max-width: 600px) {
-    height: 160px;
-    width: 130px;
-
-    .logo i {
-      font-size: 1.5rem;
-    }
+    height: 320px;
+    width: 280px;
   }
 
   @media only screen and (max-width: 400px) {
-    height: 140px;
-    width: 110px;
+    height: 300px;
+    width: 260x;
     padding: 1rem 0.3rem;
-
-    .logo i {
-      font-size: 1rem;
-    }
+  }
+  @media only screen and (max-width: 260px) {
+    height: 300px;
+    width: 100%;
+    padding: 1rem 0.3rem;
   }
 `;

@@ -18,7 +18,12 @@ const Navlinks = ({
           links
             .filter((link) => link.public === true)
             .map((link, index) => (
-              <Link className="navlink" to={link.path} key={index}>
+              <Link
+                className="navlink"
+                activeClassName="active"
+                to={link.path}
+                key={index}
+              >
                 <Icon theme={theme}>
                   <i className={link.icon}></i>
                 </Icon>

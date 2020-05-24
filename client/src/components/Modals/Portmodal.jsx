@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Modal } from '../Fixed/Modal';
 import { Card } from '../Fixed/Card';
 import { Img } from '../../utils/default/img';
@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { array, bool, func, object } from 'prop-types';
 import { logoutAccount } from '../../redux/actions/auth';
+import { useOnClickOutside } from '../../hooks';
 
 const Portmodal = ({
   open,
@@ -16,11 +17,14 @@ const Portmodal = ({
   auth: { isAuthenticated, loading },
   logoutAccount
 }) => {
+  const node = useRef();
+  useOnClickOutside(node, () => close());
+
   const img = theme && theme === 'dark' ? Img.potraitdark : Img.potraitlight;
   const logo = theme && theme === 'dark' ? Img.logodark : Img.logolight;
 
   return (
-    <Modal open={open && open} theme={theme}>
+    <Modal open={open && open} theme={theme} ref={node}>
       <Card theme={theme}>
         <div className="card-side card-back">
           <div className="card-close">
