@@ -30,7 +30,6 @@ export const ModalContent = styled.div`
 
   .modal-btn {
     display: flex;
-    border: 1px solid red;
     align-items: center;
     justify-content: space-between;
   }
