@@ -88,7 +88,7 @@ export default {
         detail: 'Git for Project Management',
         rating: 3.5,
         expLength: 2,
-        icon: 'fab fa-react'
+        icon: 'fab fa-git'
       },
       {
         name: 'SASS',

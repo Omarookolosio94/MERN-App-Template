@@ -46,7 +46,7 @@ export const ContentBox = styled.div`
 export const SkillBox = styled.div`
   width: 90%;
   margin: 3rem auto;
-  display: inline-flex;
+  display: flex;
   flex-wrap: wrap;
 
   @media only screen and (max-width: 768px) {
@@ -86,6 +86,7 @@ export const SKill = styled.div`
   .detail i.full {
     color: gold;
     font-weight: bold;
+    font-size: 1.3rem;
   }
 
   @media only screen and (max-width: 600px) {
