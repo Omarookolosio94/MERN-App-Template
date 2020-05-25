@@ -43,7 +43,7 @@ function App() {
         <ThemeProvider theme={themeMode}>
           <GlobalStyles />
           <Suspense fallback="Loading...">
-            <Wrapper>
+            <Wrapper theme={theme}>
               <NavWrapper
                 ref={node}
                 open={open}

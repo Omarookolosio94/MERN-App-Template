@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import '../../App.scss';
+import { Img } from '../../utils/default/img';
 
 export const ContactWrapper = styled.div`
   display: flex;

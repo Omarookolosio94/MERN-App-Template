@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Img } from '../../utils/default/img';
 
 export const SKillsWrapper = styled.div`
   color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
@@ -65,12 +66,14 @@ export const SKill = styled.div`
   padding: 1rem 0.5rem;
   height: 180px;
   width: 150px;
+  margin: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   transform: translateY(600px);
   animation: slideUp 0.7s ease-in-out forwards 0.7s;
+  background: ${({ theme }) => (theme === 'light' ? '#e4e4e4' : '#363537')};
   box-shadow: ${({ theme }) =>
     theme === 'light'
       ? ' 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);'

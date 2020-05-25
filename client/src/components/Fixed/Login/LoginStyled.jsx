@@ -29,15 +29,6 @@ export const FormCard = styled.div`
   }
 `;
 
-export const BackgroundImg = styled.div`
-  height: 100%;
-  background: ${({ theme }) =>
-    theme === 'light'
-      ? `url(${Img.landscapelight}) no-repeat;`
-      : `url(${Img.landscapedark} ) no-repeat;`};
-  background-size: cover;
-`;
-
 export const Form = styled.form`
   color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
   margin: 10px 0;

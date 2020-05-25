@@ -4,6 +4,8 @@ import landscapelight from '../../img/landscapelight.jpg';
 import landscapedark from '../../img/landscapedark.jpg';
 import logodark from '../../img/logodark.png';
 import logolight from '../../img/logolight.png';
+import screendark from '../../img/dark/screendark.jpg';
+import book from '../../img/light/book.jpg';
 
 export const Img = {
   potraitlight,
@@ -11,5 +13,7 @@ export const Img = {
   landscapelight,
   landscapedark,
   logodark,
-  logolight
+  logolight,
+  screendark,
+  book
 };

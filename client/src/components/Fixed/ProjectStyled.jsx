@@ -65,6 +65,8 @@ export const Project = styled.div`
   padding: 1rem 0.5rem;
   height: 350px;
   width: 300px;
+  margin: 5px;
+  background: ${({ theme }) => (theme === 'light' ? '#e4e4e4' : '#363537')};
   display: flex;
   flex-direction: column;
   justify-content: center;

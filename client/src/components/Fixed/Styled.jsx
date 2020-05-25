@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import '../../App.scss';
+import { Img } from '../../utils/default/img';
 
 export const BodyWrapper = styled.div`
   width: 100%;
@@ -8,12 +9,20 @@ export const BodyWrapper = styled.div`
 
 export const Wrapper = styled.div`
   display: flex;
-  height: 100vh;
   padding: 0;
-  margin: 0;
+  margin: 0 !important;
+  background: ${({ theme }) =>
+    theme === 'light'
+      ? `url(${Img.book}) no-repeat`
+      : `url(${Img.screendark}) no-repeat`};
+  background-position: center;
+  background-size: cover;
 
   @media only screen and (max-width: 768px) {
     flex-direction: column;
+  }
+  @media only screen and (max-width: 600px) {
+    background-position: 30%;
   }
 `;
 

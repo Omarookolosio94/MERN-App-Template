@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import {
   FormCard,
   Form,
-  FormHeader,
-  BackgroundImg
+  FormHeader
 } from '../../components/Fixed/Login/LoginStyled';
 import { Button, Icon } from '../../components/Fixed/Styled';
 import { loginAccount } from '../../redux/actions/auth';
@@ -36,55 +35,53 @@ const Login = ({ loginAccount, isAuthenticated }) => {
   }
 
   return (
-    <BackgroundImg theme={theme}>
-      <FormCard theme={theme}>
-        <Form theme={theme} onSubmit={submit}>
-          <FormHeader>
-            <i className="fal fa-lock"></i>
-            Login
-          </FormHeader>
+    <FormCard theme={theme}>
+      <Form theme={theme} onSubmit={submit}>
+        <FormHeader>
+          <i className="fal fa-lock"></i>
+          Login
+        </FormHeader>
 
-          <div className="form-field">
-            <div className="form-control">
-              <input
-                type="email"
-                className="form-input"
-                name="email"
-                value={formData.email}
-                autoComplete="off"
-                onChange={onChange}
-              />
-              <label htmlFor="email" className="form-label">
-                Email
-              </label>
-            </div>
+        <div className="form-field">
+          <div className="form-control">
+            <input
+              type="email"
+              className="form-input"
+              name="email"
+              value={formData.email}
+              autoComplete="off"
+              onChange={onChange}
+            />
+            <label htmlFor="email" className="form-label">
+              Email
+            </label>
           </div>
+        </div>
 
-          <div className="form-field">
-            <div className="form-control">
-              <input
-                type="password"
-                className="form-input"
-                name="password"
-                value={formData.password}
-                autoComplete="off"
-                onChange={onChange}
-              />
-              <label htmlFor="password" className="form-label">
-                Password
-              </label>
-            </div>
+        <div className="form-field">
+          <div className="form-control">
+            <input
+              type="password"
+              className="form-input"
+              name="password"
+              value={formData.password}
+              autoComplete="off"
+              onChange={onChange}
+            />
+            <label htmlFor="password" className="form-label">
+              Password
+            </label>
           </div>
+        </div>
 
-          <Button theme={theme}>
-            <Icon theme={theme}>
-              <i className="fal fa-key"></i>
-              <span className="text">Login</span>
-            </Icon>
-          </Button>
-        </Form>
-      </FormCard>
-    </BackgroundImg>
+        <Button theme={theme}>
+          <Icon theme={theme}>
+            <i className="fal fa-key"></i>
+            <span className="text">Login</span>
+          </Icon>
+        </Button>
+      </Form>
+    </FormCard>
   );
 };
 
