@@ -3,11 +3,12 @@ import { Switch } from 'react-router-dom';
 import { pages } from '../../routes/Routes';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { Spinner } from '../../components/Spinner/Spinner';
 
 const Index = () => {
   return (
     <>
-      <Suspense fallback="Loading...">
+      <Suspense fallback={Spinner}>
         <Switch>{pages}</Switch>
       </Suspense>
     </>

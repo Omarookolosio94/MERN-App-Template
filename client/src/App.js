@@ -18,6 +18,7 @@ import {
   BodyWrapper
 } from './components/Fixed/Styled';
 import Topnav from './components/navigation/topnav/Topnav';
+import { Spinner } from './components/Spinner/Spinner';
 
 const Index = lazy(() => import('./pages/public/Index'));
 
@@ -42,7 +43,7 @@ function App() {
       <Router>
         <ThemeProvider theme={themeMode}>
           <GlobalStyles />
-          <Suspense fallback="Loading...">
+          <Suspense fallback={Spinner}>
             <Wrapper theme={theme}>
               <NavWrapper
                 ref={node}

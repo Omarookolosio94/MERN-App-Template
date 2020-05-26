@@ -1,10 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {
-  FormCard,
-  Form,
-  FormHeader,
-  BackgroundImg
-} from '../../components/Fixed/Login/LoginStyled';
+import { Form, FormHeader } from '../../components/Fixed/Login/LoginStyled';
 import { Button, Icon } from '../../components/Fixed/Styled';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -21,7 +16,7 @@ import contents from '../../utils/contents/contents';
 const Contact = ({ sendMessage, message: { loading, success } }) => {
   const theme = window.localStorage.getItem('theme');
 
-  const { title, para1, para2, action, icon, alt, phoneNo } = contents.contact;
+  const { title, para1, para2, action, icon, phoneNo } = contents.contact;
 
   const initialState = {
     name: '',
@@ -52,7 +47,7 @@ const Contact = ({ sendMessage, message: { loading, success } }) => {
   return (
     <ContactWrapper theme={theme}>
       <ContactContent theme={theme}>
-        <PageTitle theme={theme}>Contact</PageTitle>
+        <PageTitle theme={theme}>{title}</PageTitle>
         <ContactBox>
           <Paragraph theme={theme}>{para1}</Paragraph>
           <Paragraph theme={theme}>

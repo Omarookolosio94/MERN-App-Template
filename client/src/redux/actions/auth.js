@@ -6,7 +6,8 @@ import {
   AUTH_ERROR,
   LOGIN_FAIL,
   CLEAR_USER_PROFILE,
-  LOGIN_SUCCESS
+  LOGIN_SUCCESS,
+  LOGGING_IN
 } from './types';
 import Toast from '../../utils/toast/Toast';
 
@@ -40,6 +41,8 @@ export const loginAccount = (email, password) => async (dispatch) => {
   const body = JSON.stringify({ email, password });
 
   try {
+    dispatch(loggingIn(true));
+
     const res = await axios.post('/api/matrix/auth', body, config);
     dispatch({
       type: LOGIN_SUCCESS,
@@ -47,15 +50,22 @@ export const loginAccount = (email, password) => async (dispatch) => {
     });
 
     dispatch(loadUser());
-
     Toast({ msg: 'Welcome Back', type: 'success' });
+    dispatch(loggingIn(false));
   } catch (err) {
     Toast({ msg: err.response.data.error, type: 'danger' });
-
     dispatch({
       type: LOGIN_FAIL
     });
+    dispatch(loggingIn(false));
   }
+};
+
+export const loggingIn = (data) => async (dispatch) => {
+  dispatch({
+    type: LOGGING_IN,
+    payload: data
+  });
 };
 
 //LogOut User

@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 
-const Login = ({ loginAccount, isAuthenticated }) => {
+const Login = ({ loginAccount, isAuthenticated, loading }) => {
   const theme = window.localStorage.getItem('theme');
 
   const [formData, setFormData] = useState({
@@ -75,9 +75,17 @@ const Login = ({ loginAccount, isAuthenticated }) => {
         </div>
 
         <Button theme={theme}>
-          <Icon theme={theme}>
+          {/* <Icon theme={theme}>
             <i className="fal fa-key"></i>
             <span className="text">Login</span>
+          </Icon> */}
+          <Icon theme={theme}>
+            <i
+              className={
+                loading ? 'fal fa-spinner-third fa-spin' : 'fal fa-key'
+              }
+            ></i>
+            <span className="text">{loading ? 'Logging...' : 'Login'}</span>
           </Icon>
         </Button>
       </Form>
@@ -87,11 +95,13 @@ const Login = ({ loginAccount, isAuthenticated }) => {
 
 Login.propTypes = {
   isAuthenticated: PropTypes.bool,
-  loginAccount: PropTypes.func.isRequired
+  loginAccount: PropTypes.func.isRequired,
+  loading: PropTypes.bool
 };
 
 const mapStateToProps = (state) => ({
-  isAuthenticated: state.auth.isAuthenticated
+  isAuthenticated: state.auth.isAuthenticated,
+  loading: state.auth && state.auth.loading
 });
 
 export default connect(mapStateToProps, { loginAccount })(Login);
