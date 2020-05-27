@@ -8,7 +8,7 @@ import { Spinner } from '../../components/Spinner/Spinner';
 const Index = () => {
   return (
     <>
-      <Suspense fallback={Spinner}>
+      <Suspense fallback={<Spinner />}>
         <Switch>{pages}</Switch>
       </Suspense>
     </>

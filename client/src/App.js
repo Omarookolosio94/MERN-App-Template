@@ -43,7 +43,7 @@ function App() {
       <Router>
         <ThemeProvider theme={themeMode}>
           <GlobalStyles />
-          <Suspense fallback={Spinner}>
+          <Suspense fallback={<Spinner />}>
             <Wrapper theme={theme}>
               <NavWrapper
                 ref={node}
