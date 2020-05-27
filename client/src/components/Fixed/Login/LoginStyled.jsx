@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Img } from '../../../utils/default/img';
 
 export const FormCard = styled.div`
   height: auto;
