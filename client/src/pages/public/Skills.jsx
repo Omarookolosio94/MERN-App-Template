@@ -50,41 +50,6 @@ const Skills = () => {
                 </div>
                 <div className="detail">
                   <p>{ski.name}</p>
-                  {ski.rating && ski.rating === 5 && (
-                    <i class="fal fa-star full"></i>
-                  )}
-                  {ski.rating && ski.rating === 4.5 && (
-                    <>
-                      <i class="fal fa-star"></i>
-                      <i class="fal fa-star"></i>
-                      <i class="fal fa-star"></i>
-                      <i class="fal fa-star"></i>
-                      <i class="fal fa-star-half"></i>
-                    </>
-                  )}
-                  {ski.rating && ski.rating === 4 && (
-                    <>
-                      <i class="fal fa-star"></i>
-                      <i class="fal fa-star"></i>
-                      <i class="fal fa-star"></i>
-                      <i class="fal fa-star"></i>
-                    </>
-                  )}
-                  {ski.rating && ski.rating === 3.5 && (
-                    <>
-                      <i class="fal fa-star"></i>
-                      <i class="fal fa-star"></i>
-                      <i class="fal fa-star"></i>
-                      <i class="fal fa-star-half"></i>
-                    </>
-                  )}
-                  {ski.rating && ski.rating === 3 && (
-                    <>
-                      <i class="fal fa-star"></i>
-                      <i class="fal fa-star"></i>
-                      <i class="fal fa-star"></i>
-                    </>
-                  )}
                 </div>
               </SKill>
             ))}
