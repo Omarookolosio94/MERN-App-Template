@@ -7,7 +7,6 @@ import { PageTitle } from '../Fixed/LandingStyle';
 const ProjectModal = ({ open, close, theme, data }) => {
   const node = useRef();
   useOnClickOutside(node, () => close());
-  console.log(data);
 
   return (
     <ModalProject open={open && open} theme={theme}>
@@ -16,7 +15,7 @@ const ProjectModal = ({ open, close, theme, data }) => {
           <div className="modal-btn">
             <PageTitle theme={theme}>{data.name}</PageTitle>
             <Button theme={theme} onClick={() => close()} light>
-              <Icon>
+              <Icon theme={theme}>
                 Close <i className="fal fa-times"></i>
               </Icon>
             </Button>

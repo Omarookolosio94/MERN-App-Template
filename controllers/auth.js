@@ -572,7 +572,6 @@ exports.updatePage = async (req, res, next) => {
       data: 'Page Updated'
     });
   } catch (err) {
-    console.log(err);
     if (err.name === 'ValidationError') {
       const messages = Object.values(err.errors).map((val) => val.message);
 

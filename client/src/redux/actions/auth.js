@@ -5,7 +5,6 @@ import {
   USER_LOGGED_OUT,
   AUTH_ERROR,
   LOGIN_FAIL,
-  CLEAR_USER_PROFILE,
   LOGIN_SUCCESS,
   LOGGING_IN
 } from './types';

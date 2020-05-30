@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Img } from '../../utils/default/img';
 
 export const SKillsWrapper = styled.div`
   color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};

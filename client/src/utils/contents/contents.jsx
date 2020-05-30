@@ -1,5 +1,4 @@
 import { Img } from '../default/img';
-import Contact from '../../pages/public/Contact';
 
 export default {
   home: {

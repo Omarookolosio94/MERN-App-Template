@@ -1,4 +1,4 @@
-import { SENDING_MSG_SUCCESS, SENDING_MSG, SUCCESS } from './types';
+import { SENDING_MSG, SUCCESS } from './types';
 import Toast from '../../utils/toast/Toast';
 import axios from 'axios';
 

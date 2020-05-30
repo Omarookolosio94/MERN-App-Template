@@ -2,8 +2,7 @@ import React from 'react';
 import {
   PageWrapper,
   PageTitle,
-  Paragraph,
-  Visit
+  Paragraph
 } from '../../components/Fixed/LandingStyle';
 import {
   SKillsWrapper,

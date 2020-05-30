@@ -30,6 +30,7 @@ const Contact = ({ sendMessage, message: { loading, success } }) => {
 
   useEffect(() => {
     success && setFormData(initialState);
+    //eslint-disable-next-line
   }, [success]);
 
   const submit = (e) => {
