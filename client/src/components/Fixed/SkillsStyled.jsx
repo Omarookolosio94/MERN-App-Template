@@ -85,7 +85,7 @@ export const SKill = styled.div`
 
   .detail i.full {
     color: gold;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 1.3rem;
   }
 

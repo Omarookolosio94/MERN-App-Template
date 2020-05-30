@@ -82,7 +82,7 @@ export const Form = styled.form`
 
   .form-label {
     font-size: 12px;
-    font-weight: bold;
+    font-weight: 600;
     transform: translateY(-14px);
     display: block;
     left: 0;

@@ -41,7 +41,7 @@ export const Card = styled.div`
     }
 
     .title {
-      font-weight: bold;
+      font-weight: 600;
     }
   }
 

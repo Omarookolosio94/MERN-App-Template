@@ -5,6 +5,7 @@ export const H1 = styled.h1`
   color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
   text-transform: capitalize;
   line-height: 1.3;
+  font-weight: 600;
 
   @media only screen and (max-width: 768px) {
     font-size: 2rem;
@@ -19,7 +20,7 @@ export const PageTitle = styled.h1`
   font-size: 1.3rem;
   color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
   text-transform: capitalize;
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 2rem;
   text-align: left;
 `;
@@ -27,7 +28,7 @@ export const PageTitle = styled.h1`
 export const Visit = styled.a`
   text-decoration: none;
   color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
-  font-weight: bold;
+  font-weight: 600;
 
   &:hover {
     text-decoration: underline;
@@ -40,13 +41,13 @@ export const Paragraph = styled.p`
   margin-bottom: 1rem;
 
   .text-bold {
-    font-weight: bold;
+    font-weight: 600;
   }
 
   a {
     text-decoration: none;
     color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
-    font-weight: bold;
+    font-weight: 600;
 
     &:hover {
       text-decoration: underline;
@@ -67,7 +68,7 @@ export const PageWrapper = styled.div`
   a {
     text-decoration: none;
     color: ${({ theme }) => (theme === 'dark' ? '#E4E4E4' : '#363537')};
-    font-weight: bold;
+    font-weight: 600;
 
     &:hover {
       text-decoration: underline;
@@ -113,7 +114,7 @@ export const LandingWrapper = styled.div`
   }
 
   .text-bold {
-    font-weight: bold;
+    font-weight: 600;
   }
 
   .pro-img {

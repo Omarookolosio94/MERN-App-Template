@@ -49,7 +49,7 @@ export const ModalContent = styled.div`
   }
 
   .text-bold {
-    font-weight: bold;
+    font-weight: 600;
   }
 
   @media only screen and (max-width: 768px) {

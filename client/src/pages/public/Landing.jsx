@@ -4,7 +4,6 @@ import {
   H1,
   LandingWrapper
 } from '../../components/Fixed/LandingStyle';
-import { Img } from '../../utils/default/img';
 import { Button, Icon } from '../../components/Fixed/Styled';
 import { Link } from 'react-router-dom';
 import contents from '../../utils/contents/contents';

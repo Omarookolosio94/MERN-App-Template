@@ -35,7 +35,7 @@ const Projects = () => {
                 theme={theme}
                 onClick={() => clickAction(pro)}
               >
-                <p>{pro.name}</p>
+                <p className="text-bold">{pro.name}</p>
                 <Paragraph theme={theme}>{pro.summary}</Paragraph>
               </Project>
             ))}

@@ -78,6 +78,10 @@ export const Project = styled.div`
       ? ' 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);'
       : ' 0 1px 3px rgba(228, 228, 228, 0.24), 0 1px 2px rgba(228, 228, 228, 0.24);'};
 
+  .text-bold {
+    font-weight: 600;
+  }
+
   @media only screen and (max-width: 600px) {
     height: 320px;
     width: 280px;
