@@ -9,8 +9,7 @@ dotenv.config({ path: './config/config.env' });
 
 connectDB();
 
-const auth = require('./routes/auth');
-const public = require('./routes/public');
+// const auth = require('./routes/auth');
 
 const app = express();
 
@@ -20,8 +19,8 @@ if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
 
-app.use('/api/matrix/auth', auth);
-app.use('/api/matrix', public);
+app.use('/api/auth', auth);
+app.use('/api', public);
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
